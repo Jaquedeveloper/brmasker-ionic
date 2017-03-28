@@ -1,5 +1,6 @@
 # brmasker-ionic
 return custom mask in input for ionic 2
+
 # Required
 - node 7.7.3 or up
 - npm 4.1.2 or up
@@ -28,9 +29,13 @@ npm install brmasker-ionic --save
 ```
 
 # Guide
+
 [brmasker]="{mask:'000.000.000-00', len:14}"
+
 [brmasker] = component receive array (mask, len)
+
 mask --> required / default = '' / custom mask
+
 len --> required / default = 0 / number of length
 
 ### data
