@@ -19,7 +19,11 @@ export class MaskerDirective {
   private onInput(value): void {
     let ret = this.formataCampo(value, this.brmaskere.mask, this.brmaskere.len);
     if (ret) {
-      this.element.nativeElement.value = ret;
+      if(this.element.nativeElement.getElementsByTagName('INPUT')[0]){
+        this.element.nativeElement.getElementsByTagName('INPUT')[0].value = ret;
+      } else {
+        this.element.nativeElement.value = ret;
+      }
     }
   }
   private formataCampo(campo: string, Mascara: string, tamanho: number): any { 
