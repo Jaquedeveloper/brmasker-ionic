@@ -1,5 +1,5 @@
-import { Component, Input, Output, Directive, forwardRef, Renderer, ElementRef} from '@angular/core';
-import { NG_VALUE_ACCESSOR, ControlValueAccessor, NgControl } from '@angular/forms'
+import { Component, Input, Directive, forwardRef, Renderer, ElementRef} from '@angular/core';
+import { NG_VALUE_ACCESSOR } from '@angular/forms'
 
 @Directive({
   host: {

@@ -1,8 +1,8 @@
 {
   "name": "brmasker-ionic",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "mascara para inputs",
-  "main": "index.ts",
+  "main": "dist/index.js",
   "scripts": {
     "test": "ng teste",
     "build": "ngc -p tsconfig.json && rm -rf aot"
