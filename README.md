@@ -28,6 +28,19 @@ npm install brmasker-ionic --save
 <input type="text" name="cpf" placeholder="CPF" [brmasker]="{mask:'000.000.000-00', len:14}" value="">
 ```
 
+# Module
+
+```javascript
+import { AppMaskerModule } from 'brmasker-ionic';
+
+@NgModule({
+  imports: [
+    AppMaskerModule
+  ],
+})
+
+```
+
 # Guide
 
 [brmasker]="{mask:'000.000.000-00', len:14}"
@@ -67,18 +80,7 @@ len --> required / default = 0 / number of length
 [brmasker]="{mask:'(00) 00000-0000', len:15}"
 ```
 
-# Module
 
-```javascript
-import { AppMaskerModule } from 'brmasker';
-
-@NgModule({
-  imports: [
-    AppMaskerModule
-  ],
-})
-
-```
 
 # Build for developer
 remove files before build
