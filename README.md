@@ -1,4 +1,12 @@
 # brmasker-ionic
+
+[![GitHub issues](https://img.shields.io/github/issues/amarkes/brmasker-ionic.svg)](https://github.com/amarkes/brmasker-ionic/issues)
+[![GitHub stars](https://img.shields.io/github/stars/amarkes/brmasker-ionic.svg)](https://github.com/amarkes/brmasker-ionic/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/amarkes/brmasker-ionic.svg)](https://github.com/amarkes/brmasker-ionic/network)
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/amarkes/brmasker-ionic/master/LICENSE)
+[![Build Status](https://travis-ci.org/amarkes/brmasker-ionic.svg?branch=master)](https://travis-ci.org/amarkes/brmasker-ionic)
+
+
 return custom mask in input for ionic 2
 
 # Required
