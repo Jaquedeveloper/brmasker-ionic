@@ -28,7 +28,7 @@ export class MaskerDirective {
   }
   private formataCampo(campo: string, Mascara: string, tamanho: number): any { 
     var boleanoMascara; 
-    let exp = /\-|\.|\/|\(|\)| /g
+    var exp = /\-|\.|\/|\(|\)|\,|\*|\+|\@|\#|\R|\$|\&|\%| /g;
     let campoSoNumeros = campo.toString().replace( exp, "" ); 
     var posicaoCampo = 0;    
     var NovoValorCampo="";
@@ -38,7 +38,7 @@ export class MaskerDirective {
         boleanoMascara  = ((Mascara.charAt(i) == "-") || (Mascara.charAt(i) == ".") || (Mascara.charAt(i) == "/")); 
         boleanoMascara  = boleanoMascara || ((Mascara.charAt(i) == "(") || (Mascara.charAt(i) == ")") || (Mascara.charAt(i) == " "));
         boleanoMascara  = boleanoMascara || ((Mascara.charAt(i) == ",") || (Mascara.charAt(i) == "*") || (Mascara.charAt(i) == "+"));
-        boleanoMascara  = boleanoMascara || ((Mascara.charAt(i) == "@") || (Mascara.charAt(i) == "#") || (Mascara.charAt(i) == "R$"));
+        boleanoMascara  = boleanoMascara || ((Mascara.charAt(i) == "@") || (Mascara.charAt(i) == "#") || (Mascara.charAt(i) == "R"));
         boleanoMascara  = boleanoMascara || ((Mascara.charAt(i) == "$") || (Mascara.charAt(i) == "&") || (Mascara.charAt(i) == "%"));
         if (boleanoMascara) { 
           NovoValorCampo += Mascara.charAt(i); 
