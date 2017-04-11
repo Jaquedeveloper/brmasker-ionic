@@ -48,6 +48,9 @@ import { AppMaskerModule } from 'brmasker-ionic';
 })
 
 ```
+# Characters
+
+`- . / ( ) , * + @ # R$ $ & %`
 
 # Guide
 

@@ -32,11 +32,14 @@ export class MaskerDirective {
     let campoSoNumeros = campo.toString().replace( exp, "" ); 
     var posicaoCampo = 0;    
     var NovoValorCampo="";
-    var TamanhoMascara = campoSoNumeros.length;; 
+    var TamanhoMascara = campoSoNumeros.length;
     for(let i=0; i< TamanhoMascara; i++) { 
       if(i < tamanho) {
         boleanoMascara  = ((Mascara.charAt(i) == "-") || (Mascara.charAt(i) == ".") || (Mascara.charAt(i) == "/")); 
         boleanoMascara  = boleanoMascara || ((Mascara.charAt(i) == "(") || (Mascara.charAt(i) == ")") || (Mascara.charAt(i) == " "));
+        boleanoMascara  = boleanoMascara || ((Mascara.charAt(i) == ",") || (Mascara.charAt(i) == "*") || (Mascara.charAt(i) == "+"));
+        boleanoMascara  = boleanoMascara || ((Mascara.charAt(i) == "@") || (Mascara.charAt(i) == "#") || (Mascara.charAt(i) == "R$"));
+        boleanoMascara  = boleanoMascara || ((Mascara.charAt(i) == "$") || (Mascara.charAt(i) == "&") || (Mascara.charAt(i) == "%"));
         if (boleanoMascara) { 
           NovoValorCampo += Mascara.charAt(i); 
           TamanhoMascara++;
