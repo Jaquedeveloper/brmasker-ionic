@@ -94,7 +94,11 @@ len --> required / default = 0 / number of length
 
 
 # Build for developer
+
+### Only use if you change the component
+
 remove files before build
+
 ```file
 dist/
 src/app/app.module.ngfactory.ts
