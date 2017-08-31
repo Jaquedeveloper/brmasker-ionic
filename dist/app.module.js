@@ -22,4 +22,4 @@ export var AppMaskerModule = (function () {
     AppMaskerModule.ctorParameters = function () { return []; };
     return AppMaskerModule;
 }());
-//# sourceMappingURL=/Volumes/HD Rigido Hitashi/htdocs/github/brmasker-ionic/app.module.js.map
+//# sourceMappingURL=/Volumes/macHD/htdocs/github/br-masker-ionic/brmasker-ionic/app.module.js.map

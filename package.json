@@ -5,7 +5,8 @@
   "main": "dist/index.js",
   "scripts": {
     "test": "ng teste",
-    "build": "ngc -p tsconfig.json && rm -rf aot"
+    "build": "ngc -p tsconfig.json && rm -rf aot",
+    "remove": "rm -R dist && rm src/app/app.module.ngfactory.ts rm src/app/app.module.ngsummary.json rm src/app/index.ngsummary.json rm src/app/components/index.ngsummary.json rm src/app/components/masker/index.ngsummary.json rm src/app/components/masker/masker.component.ngfactory.ts m src/app/components/masker/masker.component.ngsummary.json rm src/app/components/masker/masker.module.ngfactory.ts rm src/app/components/masker/masker.module.ngsummary.json"
   },
   "repository": {
     "type": "git",
