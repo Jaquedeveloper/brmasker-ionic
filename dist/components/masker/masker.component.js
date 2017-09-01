@@ -1,35 +1,33 @@
-import { Input, Directive, forwardRef, Renderer, ElementRef } from '@angular/core';
-import { NG_VALUE_ACCESSOR } from '@angular/forms';
+import { Input, Directive, HostListener, ElementRef } from '@angular/core';
 export var MaskerDirective = (function () {
-    function MaskerDirective(renderer, element) {
-        this.renderer = renderer;
+    function MaskerDirective(element) {
         this.element = element;
     }
+    MaskerDirective.prototype.inputChanged = function (event) {
+        if (event.target.value) {
+            this.onInput(event.target.value);
+        }
+    };
     MaskerDirective.prototype.onInput = function (value) {
         var ret = this.formataCampo(value, this.brmaskere.mask, this.brmaskere.len);
         if (ret) {
-            if (this.element.nativeElement.getElementsByTagName('INPUT')[0]) {
-                this.element.nativeElement.getElementsByTagName('INPUT')[0].value = ret;
-            }
-            else {
-                this.element.nativeElement.value = ret;
-            }
+            this.element.nativeElement.value = ret;
         }
     };
     MaskerDirective.prototype.formataCampo = function (campo, Mascara, tamanho) {
         var boleanoMascara;
         var exp = /\-|\.|\/|\(|\)|\,|\*|\+|\@|\#|\R|\$|\&|\%| /g;
-        var campoSoNumeros = campo.toString().replace(exp, "");
+        var campoSoNumeros = campo.toString().replace(exp, '');
         var posicaoCampo = 0;
-        var NovoValorCampo = "";
+        var NovoValorCampo = '';
         var TamanhoMascara = campoSoNumeros.length;
         for (var i = 0; i < TamanhoMascara; i++) {
             if (i < tamanho) {
-                boleanoMascara = ((Mascara.charAt(i) == "-") || (Mascara.charAt(i) == ".") || (Mascara.charAt(i) == "/"));
-                boleanoMascara = boleanoMascara || ((Mascara.charAt(i) == "(") || (Mascara.charAt(i) == ")") || (Mascara.charAt(i) == " "));
-                boleanoMascara = boleanoMascara || ((Mascara.charAt(i) == ",") || (Mascara.charAt(i) == "*") || (Mascara.charAt(i) == "+"));
-                boleanoMascara = boleanoMascara || ((Mascara.charAt(i) == "@") || (Mascara.charAt(i) == "#") || (Mascara.charAt(i) == "R"));
-                boleanoMascara = boleanoMascara || ((Mascara.charAt(i) == "$") || (Mascara.charAt(i) == "&") || (Mascara.charAt(i) == "%"));
+                boleanoMascara = ((Mascara.charAt(i) === '-') || (Mascara.charAt(i) === '.') || (Mascara.charAt(i) === '/'));
+                boleanoMascara = boleanoMascara || ((Mascara.charAt(i) === '(') || (Mascara.charAt(i) === ')') || (Mascara.charAt(i) === ' '));
+                boleanoMascara = boleanoMascara || ((Mascara.charAt(i) === ',') || (Mascara.charAt(i) === '*') || (Mascara.charAt(i) === '+'));
+                boleanoMascara = boleanoMascara || ((Mascara.charAt(i) === '@') || (Mascara.charAt(i) === '#') || (Mascara.charAt(i) === 'R'));
+                boleanoMascara = boleanoMascara || ((Mascara.charAt(i) === '$') || (Mascara.charAt(i) === '&') || (Mascara.charAt(i) === '%'));
                 if (boleanoMascara) {
                     NovoValorCampo += Mascara.charAt(i);
                     TamanhoMascara++;
@@ -44,24 +42,16 @@ export var MaskerDirective = (function () {
     };
     MaskerDirective.decorators = [
         { type: Directive, args: [{
-                    host: {
-                        '(input)': 'onInput($event.target.value)',
-                    },
                     selector: '[brmasker]',
-                    providers: [{
-                            provide: NG_VALUE_ACCESSOR,
-                            useExisting: forwardRef(function () { return MaskerDirective; }),
-                            multi: true
-                        }]
                 },] },
     ];
     /** @nocollapse */
     MaskerDirective.ctorParameters = function () { return [
-        { type: Renderer, },
         { type: ElementRef, },
     ]; };
     MaskerDirective.propDecorators = {
         'brmaskere': [{ type: Input, args: ['brmasker',] },],
+        'inputChanged': [{ type: HostListener, args: ['keyup', ['$event'],] },],
     };
     return MaskerDirective;
 }());

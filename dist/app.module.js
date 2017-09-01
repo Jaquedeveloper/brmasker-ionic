@@ -12,6 +12,9 @@ export var AppMaskerModule = (function () {
         { type: NgModule, args: [{
                     imports: [
                         MaskerModule
+                    ],
+                    exports: [
+                        MaskerModule
                     ]
                 },] },
     ];

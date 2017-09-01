@@ -14,9 +14,9 @@ export class Wrapper_MaskerDirective {
   context:import0.MaskerDirective;
   /*private*/ _changed:boolean;
   /*private*/ _expr_0:any;
-  constructor(p0:any,p1:any) {
+  constructor(p0:any) {
     this._changed = false;
-    this.context = new import0.MaskerDirective(p0,p1);
+    this.context = new import0.MaskerDirective(p0);
     this._expr_0 = import1.UNINITIALIZED;
   }
   ngOnDetach(view:import2.AppView<any>,componentView:import2.AppView<any>,el:any):void {
@@ -39,8 +39,8 @@ export class Wrapper_MaskerDirective {
   }
   handleEvent(eventName:string,$event:any):boolean {
     var result:boolean = true;
-    if ((eventName == 'input')) {
-      const pd_sub_0:any = ((<any>this.context.onInput($event.target.value)) !== false);
+    if ((eventName == 'keyup')) {
+      const pd_sub_0:any = ((<any>this.context.inputChanged($event)) !== false);
       result = (pd_sub_0 && result);
     }
     return result;

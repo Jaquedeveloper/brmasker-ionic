@@ -5,6 +5,9 @@ import { NgModule, ModuleWithProviders } from '@angular/core';
 @NgModule({
     imports: [
         MaskerModule
+    ],
+    exports: [
+        MaskerModule
     ]
 })
 
