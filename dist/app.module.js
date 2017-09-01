@@ -12,9 +12,6 @@ export var AppMaskerModule = (function () {
         { type: NgModule, args: [{
                     imports: [
                         MaskerModule
-                    ],
-                    exports: [
-                        MaskerModule
                     ]
                 },] },
     ];
@@ -22,4 +19,4 @@ export var AppMaskerModule = (function () {
     AppMaskerModule.ctorParameters = function () { return []; };
     return AppMaskerModule;
 }());
-//# sourceMappingURL=/Volumes/macHD/htdocs/github/br-masker-ionic/brmasker-ionic/app.module.js.map
+//# sourceMappingURL=app.module.js.map
