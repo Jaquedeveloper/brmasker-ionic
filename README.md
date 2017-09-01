@@ -6,6 +6,7 @@
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/amarkes/brmasker-ionic/master/LICENSE)
 [![Build Status](https://travis-ci.org/amarkes/brmasker-ionic.svg?branch=master)](https://travis-ci.org/amarkes/brmasker-ionic)
 
+### For ionic visit [3 +](https://github.com/amarkes/br-masker-ionic-3)
 
 return custom mask in input for ionic 2
 
@@ -110,6 +111,12 @@ src/app/components/masker/masker.component.ngfactory.ts
 src/app/components/masker/masker.component.ngsummary.json
 src/app/components/masker/masker.module.ngfactory.ts
 src/app/components/masker/masker.module.ngsummary.json
+```
+
+or
+
+```sh
+npm run remove
 ```
 
 ```sh
